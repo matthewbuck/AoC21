@@ -1,7 +1,7 @@
 #Base R
 library('magrittr')
 
-input <- read.delim('c:/users/mbbuc/documents/aoc21/input.txt', header = FALSE) %>%
+input <- read.delim('path/to/input', header = FALSE) %>%
   unlist()
 
 answer <- 0
@@ -40,7 +40,7 @@ print(answer)
 ## Tidyverse style
 library('tidyverse')
 
-input <- read_delim('c:/users/mbbuc/documents/aoc21/input.txt', '/n',
+input <- read_delim('path/to/input', '/n',
                     col_names = 'depth') %>%
   mutate(diff = depth - lag(depth)) %>%
   mutate(increase = if_else(diff > 0, 1, 0))
